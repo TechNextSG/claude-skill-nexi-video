@@ -106,5 +106,11 @@ Also:
 2. **Promote** every new lesson to a numbered rule in `reference/rules.md`, with its check.
 3. **Automate** every rule that was broken twice, or that a user had to point out: extend `lint.py`, `layout_audit.py` or `gate.py`, and prove it with `python lint.py --selftest` or a gate run on the bad build.
 4. **Document** engine changes in `reference/engine.md` and commands in `reference/workflow.md`.
-5. **Publish:** run `python ~/ClaudeWork/technext-claude-skills/tools/build_skills.py`, then commit and push that repo (TechNextSG/technext-claude-skills). Check that https://technextsg.github.io/technext-claude-skills/ returns 200.
+5. **Publish:** run `python ~/ClaudeWork/technext-claude-skills/tools/build_skills.py --push` (pushes this skill's repo and the Claude Skills site). Check that https://technextsg.github.io/technext-claude-skills/ returns 200.
 6. **Remember:** update `project_nexi_odoo_walkthrough.md` and `qa/ROUND2-TODO.md`, then run `python sync_source.py`.
+
+## Last step: update the repo (owner rule, 2026-10-11)
+Every time this skill is used, and after any lesson or rule is added to it, finish with
+`python ~/ClaudeWork/technext-claude-skills/tools/build_skills.py --push`. It mirrors this folder to its own public repo
+https://github.com/TechNextSG/claude-skill-nexi-video and rebuilds https://technextsg.github.io/technext-claude-skills/
+(it only commits what changed). Report the repo commit in the status, or the error if the push failed.
